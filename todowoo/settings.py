@@ -123,8 +123,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Django Create_App appending: 
+# Django Create_App appending:
 
 
 INSTALLED_APPS.append('default_app')
 
+INSTALLED_APPS.append('todo')
+
+LOGIN_URL = '/login'

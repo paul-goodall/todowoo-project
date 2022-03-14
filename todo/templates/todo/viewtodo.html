@@ -1,0 +1,12 @@
+{% extends 'default_app/base.html' %}
+
+{% block content %}
+<br/>
+<h2>{{ todo.title }}</h2>
+<a href="{% url 'edittodo' todo.id %}">[edit]</a>
+<h5 class={% if todo.important %}'important alert alert-danger'>Status: Important{% else %}'normal alert alert-success'>Status: Normal{% endif %}</h5>
+<h5>Created: {{ todo.created }}</h5>
+<h5>Completed: {{ todo.datecompleted }}</h5>
+<hr class="border border-primary"/>
+<p>{{ todo.memo }}</p>
+{% endblock %}

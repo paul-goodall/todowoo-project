@@ -1,0 +1,22 @@
+{% extends 'default_app/base.html' %}
+
+{% block content %}
+<br/>
+<h2>{{ todo.title }}</h2>
+
+<p>Date Completed: [{{ todo.datecompleted }}]</p>
+<p>button name: [{{ btn_name }}]</p>
+<form class="edittodo" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<br/>
+<button type="submit" name="form-btn" value='btn_incomplete_todo'>Set to Open</button>
+<button type="submit" name="form-btn" value='btn_complete_todo'  >Set to Complete</button>
+<button type="submit" name="form-btn" value='btn_delete_todo'    >Delete Todo</button>
+<hr/>
+<button type="submit" name="form-btn" value="btn_save_todo">Save</button>
+</form>
+
+
+
+{% endblock %}

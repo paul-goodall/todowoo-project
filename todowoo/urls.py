@@ -15,15 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from default_app import views as default_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
 
-# Django Create_App appending: 
-
-from default_app import views as default_app_views
-
-urlpatterns.append(path('', default_app_views.home, name='default_app_home'))
-
+import default_app.urls
+urlpatterns = urlpatterns + default_app.urls.my_urls
+import todo.urls
+urlpatterns = urlpatterns + todo.urls.my_urls
